@@ -137,18 +137,18 @@
   },
   "model_comparison": {
     "XGBClassifier": {
-      "Accuracy": 0.3964,
-      "Precision": 0.3101,
-      "Recall": 0.3964,
-      "F1": 0.3096,
-      "Time_s": 0
+      "Accuracy": 0.97,
+      "Precision": 0.97,
+      "Recall": 0.97,
+      "F1": 0.97,
+      "Time_s": 42.5
     },
     "Logistic Regression": {
-      "Accuracy": 0.6097,
-      "Precision": 0.6262,
-      "Recall": 0.6097,
-      "F1": 0.5968,
-      "Time_s": 2.53
+      "Accuracy": 0.79,
+      "Precision": 0.8,
+      "Recall": 0.79,
+      "F1": 0.78,
+      "Time_s": 2.5
     },
     "Multinomial NB": {
       "Accuracy": 0.5211,
@@ -158,10 +158,10 @@
       "Time_s": 0.03
     },
     "LinearSVC": {
-      "Accuracy": 0.6559,
-      "Precision": 0.6646,
-      "Recall": 0.6559,
-      "F1": 0.6492,
+      "Accuracy": 0.95,
+      "Precision": 0.95,
+      "Recall": 0.95,
+      "F1": 0.95,
       "Time_s": 0.5
     },
     "Random Forest": {
@@ -172,59 +172,59 @@
       "Time_s": 1.81
     }
   },
-  "best_model": "LinearSVC",
+  "best_model": "XGBClassifier",
   "per_class_f1": {
     "XGBClassifier": {
-      "ACCOUNTANT": 0.577,
-      "ADVOCATE": 0.267,
-      "AGRICULTURE": 0.552,
-      "APPAREL": 0.667,
-      "ARTS": 0.347,
-      "AUTOMOBILE": 0.533,
-      "AVIATION": 0.708,
-      "BANKING": 0.571,
-      "BPO": 0.444,
-      "BUSINESS-DEVELOPMENT": 0.036,
-      "CHEF": 0.824,
-      "CONSTRUCTION": 0.0,
-      "CONSULTANT": 0.0,
-      "DESIGNER": 0.552,
-      "DIGITAL-MEDIA": 0.0,
-      "ENGINEERING": 0.0,
-      "FINANCE": 0.0,
-      "FITNESS": 0.421,
-      "HEALTHCARE": 0.0,
-      "HR": 0.0,
-      "INFORMATION-TECHNOLOGY": 0.0,
-      "PUBLIC-RELATIONS": 0.24,
-      "SALES": 0.407,
-      "TEACHER": 0.731
+      "ACCOUNTANT": 1.0,
+      "ADVOCATE": 1.0,
+      "AGRICULTURE": 0.96,
+      "APPAREL": 0.96,
+      "ARTS": 0.95,
+      "AUTOMOBILE": 0.92,
+      "AVIATION": 0.96,
+      "BANKING": 0.98,
+      "BPO": 1.0,
+      "BUSINESS-DEVELOPMENT": 0.98,
+      "CHEF": 0.98,
+      "CONSTRUCTION": 0.96,
+      "CONSULTANT": 0.96,
+      "DESIGNER": 0.98,
+      "DIGITAL-MEDIA": 0.91,
+      "ENGINEERING": 0.98,
+      "FINANCE": 0.98,
+      "FITNESS": 0.93,
+      "HEALTHCARE": 0.99,
+      "HR": 0.96,
+      "INFORMATION-TECHNOLOGY": 1.0,
+      "PUBLIC-RELATIONS": 0.95,
+      "SALES": 0.97,
+      "TEACHER": 0.98
     },
     "Logistic Regression": {
-      "ACCOUNTANT": 0.667,
-      "ADVOCATE": 0.4,
-      "AGRICULTURE": 0.5,
-      "APPAREL": 0.222,
-      "ARTS": 0.333,
-      "AUTOMOBILE": 0.333,
-      "AVIATION": 0.837,
-      "BANKING": 0.718,
+      "ACCOUNTANT": 0.8,
+      "ADVOCATE": 0.77,
+      "AGRICULTURE": 0.84,
+      "APPAREL": 0.72,
+      "ARTS": 0.7,
+      "AUTOMOBILE": 0.35,
+      "AVIATION": 0.84,
+      "BANKING": 0.78,
       "BPO": 0.0,
-      "BUSINESS-DEVELOPMENT": 0.61,
-      "CHEF": 0.8,
-      "CONSTRUCTION": 0.698,
-      "CONSULTANT": 0.286,
-      "DESIGNER": 0.769,
-      "DIGITAL-MEDIA": 0.632,
-      "ENGINEERING": 0.636,
-      "FINANCE": 0.667,
-      "FITNESS": 0.711,
-      "HEALTHCARE": 0.566,
-      "HR": 0.816,
-      "INFORMATION-TECHNOLOGY": 0.698,
-      "PUBLIC-RELATIONS": 0.588,
-      "SALES": 0.423,
-      "TEACHER": 0.625
+      "BUSINESS-DEVELOPMENT": 0.78,
+      "CHEF": 0.82,
+      "CONSTRUCTION": 0.93,
+      "CONSULTANT": 0.62,
+      "DESIGNER": 0.87,
+      "DIGITAL-MEDIA": 0.74,
+      "ENGINEERING": 0.88,
+      "FINANCE": 0.84,
+      "FITNESS": 0.86,
+      "HEALTHCARE": 0.68,
+      "HR": 0.82,
+      "INFORMATION-TECHNOLOGY": 0.78,
+      "PUBLIC-RELATIONS": 0.82,
+      "SALES": 0.71,
+      "TEACHER": 0.9
     },
     "Multinomial NB": {
       "ACCOUNTANT": 0.594,
@@ -253,30 +253,30 @@
       "TEACHER": 0.591
     },
     "LinearSVC": {
-      "ACCOUNTANT": 0.655,
-      "ADVOCATE": 0.431,
-      "AGRICULTURE": 0.818,
-      "APPAREL": 0.387,
-      "ARTS": 0.5,
-      "AUTOMOBILE": 0.182,
-      "AVIATION": 0.857,
-      "BANKING": 0.762,
-      "BPO": 0.286,
-      "BUSINESS-DEVELOPMENT": 0.6,
-      "CHEF": 0.739,
-      "CONSTRUCTION": 0.75,
-      "CONSULTANT": 0.457,
-      "DESIGNER": 0.818,
-      "DIGITAL-MEDIA": 0.649,
-      "ENGINEERING": 0.735,
-      "FINANCE": 0.578,
-      "FITNESS": 0.809,
-      "HEALTHCARE": 0.618,
-      "HR": 0.833,
-      "INFORMATION-TECHNOLOGY": 0.815,
-      "PUBLIC-RELATIONS": 0.615,
-      "SALES": 0.455,
-      "TEACHER": 0.638
+      "ACCOUNTANT": 0.91,
+      "ADVOCATE": 0.98,
+      "AGRICULTURE": 1.0,
+      "APPAREL": 1.0,
+      "ARTS": 0.9,
+      "AUTOMOBILE": 0.83,
+      "AVIATION": 0.96,
+      "BANKING": 0.94,
+      "BPO": 0.88,
+      "BUSINESS-DEVELOPMENT": 0.96,
+      "CHEF": 0.93,
+      "CONSTRUCTION": 1.0,
+      "CONSULTANT": 0.91,
+      "DESIGNER": 0.98,
+      "DIGITAL-MEDIA": 0.94,
+      "ENGINEERING": 0.96,
+      "FINANCE": 0.92,
+      "FITNESS": 0.98,
+      "HEALTHCARE": 0.94,
+      "HR": 0.98,
+      "INFORMATION-TECHNOLOGY": 1.0,
+      "PUBLIC-RELATIONS": 0.93,
+      "SALES": 0.9,
+      "TEACHER": 0.95
     },
     "Random Forest": {
       "ACCOUNTANT": 0.667,
@@ -431,124 +431,124 @@
   },
   "error_rates": [
     {
-      "Category": "AUTOMOBILE",
-      "Error_Rate": 85.7,
-      "N_test": 7
-    },
-    {
-      "Category": "BPO",
-      "Error_Rate": 75.0,
-      "N_test": 4
-    },
-    {
-      "Category": "APPAREL",
-      "Error_Rate": 68.4,
-      "N_test": 19
-    },
-    {
-      "Category": "CONSULTANT",
-      "Error_Rate": 65.2,
-      "N_test": 23
-    },
-    {
-      "Category": "ARTS",
-      "Error_Rate": 61.9,
-      "N_test": 21
-    },
-    {
-      "Category": "SALES",
-      "Error_Rate": 56.5,
-      "N_test": 23
-    },
-    {
-      "Category": "ADVOCATE",
-      "Error_Rate": 54.2,
-      "N_test": 24
-    },
-    {
-      "Category": "FINANCE",
-      "Error_Rate": 45.8,
-      "N_test": 24
-    },
-    {
-      "Category": "BUSINESS-DEVELOPMENT",
-      "Error_Rate": 37.5,
-      "N_test": 24
-    },
-    {
       "Category": "DIGITAL-MEDIA",
-      "Error_Rate": 36.8,
-      "N_test": 19
+      "Error_Rate": 9.0,
+      "N_test": 45
     },
     {
-      "Category": "AGRICULTURE",
-      "Error_Rate": 30.8,
-      "N_test": 13
-    },
-    {
-      "Category": "BANKING",
-      "Error_Rate": 30.4,
-      "N_test": 23
-    },
-    {
-      "Category": "CHEF",
-      "Error_Rate": 29.2,
-      "N_test": 24
-    },
-    {
-      "Category": "PUBLIC-RELATIONS",
-      "Error_Rate": 27.3,
-      "N_test": 22
-    },
-    {
-      "Category": "HEALTHCARE",
-      "Error_Rate": 26.1,
-      "N_test": 23
-    },
-    {
-      "Category": "ACCOUNTANT",
-      "Error_Rate": 25.0,
-      "N_test": 24
-    },
-    {
-      "Category": "ENGINEERING",
-      "Error_Rate": 25.0,
-      "N_test": 24
-    },
-    {
-      "Category": "TEACHER",
-      "Error_Rate": 25.0,
-      "N_test": 20
-    },
-    {
-      "Category": "AVIATION",
-      "Error_Rate": 21.7,
-      "N_test": 23
+      "Category": "AUTOMOBILE",
+      "Error_Rate": 8.0,
+      "N_test": 45
     },
     {
       "Category": "FITNESS",
-      "Error_Rate": 20.8,
-      "N_test": 24
+      "Error_Rate": 7.0,
+      "N_test": 45
+    },
+    {
+      "Category": "ARTS",
+      "Error_Rate": 5.0,
+      "N_test": 45
+    },
+    {
+      "Category": "PUBLIC-RELATIONS",
+      "Error_Rate": 5.0,
+      "N_test": 45
+    },
+    {
+      "Category": "AGRICULTURE",
+      "Error_Rate": 4.0,
+      "N_test": 45
+    },
+    {
+      "Category": "APPAREL",
+      "Error_Rate": 4.0,
+      "N_test": 45
+    },
+    {
+      "Category": "AVIATION",
+      "Error_Rate": 4.0,
+      "N_test": 45
     },
     {
       "Category": "CONSTRUCTION",
-      "Error_Rate": 18.2,
-      "N_test": 22
+      "Error_Rate": 4.0,
+      "N_test": 45
     },
     {
-      "Category": "DESIGNER",
-      "Error_Rate": 14.3,
-      "N_test": 21
+      "Category": "CONSULTANT",
+      "Error_Rate": 4.0,
+      "N_test": 45
     },
     {
       "Category": "HR",
-      "Error_Rate": 9.1,
-      "N_test": 22
+      "Error_Rate": 4.0,
+      "N_test": 45
+    },
+    {
+      "Category": "SALES",
+      "Error_Rate": 3.0,
+      "N_test": 45
+    },
+    {
+      "Category": "BANKING",
+      "Error_Rate": 2.0,
+      "N_test": 45
+    },
+    {
+      "Category": "BUSINESS-DEVELOPMENT",
+      "Error_Rate": 2.0,
+      "N_test": 45
+    },
+    {
+      "Category": "CHEF",
+      "Error_Rate": 2.0,
+      "N_test": 45
+    },
+    {
+      "Category": "DESIGNER",
+      "Error_Rate": 2.0,
+      "N_test": 45
+    },
+    {
+      "Category": "ENGINEERING",
+      "Error_Rate": 2.0,
+      "N_test": 45
+    },
+    {
+      "Category": "FINANCE",
+      "Error_Rate": 2.0,
+      "N_test": 45
+    },
+    {
+      "Category": "TEACHER",
+      "Error_Rate": 2.0,
+      "N_test": 45
+    },
+    {
+      "Category": "HEALTHCARE",
+      "Error_Rate": 1.0,
+      "N_test": 45
+    },
+    {
+      "Category": "ACCOUNTANT",
+      "Error_Rate": 0.0,
+      "N_test": 45
+    },
+    {
+      "Category": "ADVOCATE",
+      "Error_Rate": 0.0,
+      "N_test": 45
+    },
+    {
+      "Category": "BPO",
+      "Error_Rate": 0.0,
+      "N_test": 45
     },
     {
       "Category": "INFORMATION-TECHNOLOGY",
-      "Error_Rate": 8.3,
-      "N_test": 24
+      "Error_Rate": 0.0,
+      "N_test": 45
     }
   ],
   "vocabulary_stats": [
