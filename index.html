@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Comprehensive Resume Classification Analysis — ML Model Performance Dashboard with interactive charts, per-class metrics, confusion analysis, and more.">
+  <title>Resume Classification — Analysis Dashboard</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <a href="#" class="navbar-brand">
+      <span class="logo-icon">📊</span>
+      <h1>Resume Analysis</h1>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#models">Models</a></li>
+      <li><a href="#per-class">Per-Class</a></li>
+      <li><a href="#confusion">Confusion</a></li>
+      <li><a href="#distribution">Distribution</a></li>
+      <li><a href="#errors">Errors</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#vocabulary">Vocabulary</a></li>
+      <li><a href="#ablation">Ablation</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-badge">🧪 Machine Learning Results Dashboard</div>
+    <h2>Resume <span>Classification</span><br>Analysis & Results</h2>
+    <p class="hero-subtitle">
+      Comprehensive evaluation of ML models trained on the Kaggle Resume Dataset —
+      24 job categories, 9 models, detailed per-class analysis.
+    </p>
+    <div class="stats-row" id="hero-stats">
+      
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section" id="models">
+      <div class="section-header">
+        <div class="section-number">1</div>
+        <h3>Model Performance Comparison</h3>
+        <span class="section-subtitle">All trained models ranked by F1 score</span>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <h4>📋 Results Table</h4>
+            <span class="card-badge">Click headers to sort</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="data-table" id="model-table">
+              <thead>
+                <tr>
+                  <th data-sort="name">Model ↕</th>
+                  <th data-sort="Accuracy">Accuracy ↕</th>
+                  <th data-sort="Precision">Precision ↕</th>
+                  <th data-sort="Recall">Recall ↕</th>
+                  <th data-sort="F1">F1 ↕</th>
+                  <th data-sort="Time_s">Time (s) ↕</th>
+                </tr>
+              </thead>
+              <tbody id="model-table-body">
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h4>📊 Performance Chart</h4>
+            <span class="card-badge">Grouped Bar</span>
+          </div>
+          <div class="chart-container">
+            <canvas id="model-bar-chart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="margin-top: 1.5rem;">
+        <div class="card-header">
+          <h4>🎯 Radar Comparison — Top 4 Models</h4>
+        </div>
+        <div class="chart-container short" style="max-width: 550px; margin: 0 auto;">
+          <canvas id="radar-chart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="per-class">
+      <div class="section-header">
+        <div class="section-number">2</div>
+        <h3>Per-Class Performance</h3>
+        <span class="section-subtitle">F1 score for each category × model</span>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h4>🗺️ F1 Score Heatmap</h4>
+          <span class="card-badge">Hover for details</span>
+        </div>
+        <div class="heatmap-container">
+          <table class="heatmap-table" id="heatmap-table">
+            <thead id="heatmap-head"></thead>
+            <tbody id="heatmap-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="confusion">
+      <div class="section-header">
+        <div class="section-number">3</div>
+        <h3>Confusion Analysis</h3>
+        <span class="section-subtitle">Most frequently confused category pairs</span>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <h4>🔄 Top Confused Pairs</h4>
+            <span class="card-badge" id="confused-count">-</span>
+          </div>
+          <div id="confused-pairs-list"></div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h4>📊 Misclassification Counts</h4>
+          </div>
+          <div class="chart-container">
+            <canvas id="confusion-chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="distribution">
+      <div class="section-header">
+        <div class="section-number">4</div>
+        <h3>Category Distribution</h3>
+        <span class="section-subtitle">Resume count per job category</span>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <h4>📊 Resume Counts</h4>
+          </div>
+          <div class="chart-container tall">
+            <canvas id="distribution-chart"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h4>🍩 Category Proportions</h4>
+          </div>
+          <div class="chart-container tall">
+            <canvas id="donut-chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="errors">
+      <div class="section-header">
+        <div class="section-number">5</div>
+        <h3>Error Analysis</h3>
+        <span class="section-subtitle">Per-category error rates for best model</span>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h4>⚠️ Error Rate per Category</h4>
+          <span class="card-badge" id="best-model-badge">-</span>
+        </div>
+        <div id="error-bars"></div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-header">
+        <div class="section-number">6</div>
+        <h3>Skill Domain Matrix</h3>
+        <span class="section-subtitle">Average skill mentions per resume by domain</span>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h4>💡 Skill Frequency Heatmap</h4>
+          <span class="card-badge">Normalized per resume</span>
+        </div>
+        <div class="table-wrapper">
+          <table class="skill-table" id="skill-table">
+            <thead id="skill-head"></thead>
+            <tbody id="skill-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="vocabulary">
+      <div class="section-header">
+        <div class="section-number">7</div>
+        <h3>Vocabulary Statistics</h3>
+        <span class="section-subtitle">Linguistic metrics per category</span>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h4>📝 Vocabulary Metrics</h4>
+          <span class="card-badge">Sorted by TTR</span>
+        </div>
+        <div class="table-wrapper">
+          <table class="vocab-table" id="vocab-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Total Words</th>
+                <th>Unique Words</th>
+                <th>TTR</th>
+                <th>Avg Word Length</th>
+                <th>Stopword Ratio</th>
+              </tr>
+            </thead>
+            <tbody id="vocab-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ablation">
+      <div class="section-header">
+        <div class="section-number">8</div>
+        <h3>Feature Ablation Study</h3>
+        <span class="section-subtitle">F1 score vs max_features (LinearSVC)</span>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h4>📈 Ablation Curve</h4>
+        </div>
+        <div class="chart-container short">
+          <canvas id="ablation-chart"></canvas>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Resume Classification Analysis Dashboard &bull; Built with Chart.js &bull; Data from ML Pipeline</p>
+  </footer>
+
+  <button class="scroll-top" id="scroll-top-btn" aria-label="Scroll to top">↑</button>
+
+  <script src="app.js"></script>
+</body>
+</html>

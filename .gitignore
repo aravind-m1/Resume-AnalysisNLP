@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Temporary / Debug files
+verify_notebook.py
+patch_generator.py
+
+# OS generated
+.DS_Store
+Thumbs.db
